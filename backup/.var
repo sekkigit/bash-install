@@ -1,1 +1,2 @@
 USER="$(id -u -n)"
+SOURCE="/home"

@@ -10,4 +10,8 @@ sudo cscli parsers install crowdsecurity/iptables-logs
 sudo cscli hub update
 sudo cscli parsers upgrade crowdsecurity/sshd-logs 
 
+cat <<EOF >> /etc/cron.d/crontask
+20 5 * * * root    cscli hub update && cscli collections upgrade crowdsecurity/sshd && systemctl reload crowdsec
+EOF
+crontab -u "$USER" /etc/cron.d/crontask
 systemctl reload crowdsec

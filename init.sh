@@ -47,7 +47,7 @@ echo
 ##################################################################
 banner2 "     B A S I C  A P P S"
 
-swap(){
+basic(){
   echo ""
   spin &
   pid=$!
@@ -60,13 +60,32 @@ swap(){
   kill $pid
   echo ""
 }
-swap
+basic
 
 echo -e "$COLOR         INSTALLED BASIC APPS$ENDCOLOR"
 ##################################################################
+banner2 "     C R O N T A S K  S E T U P"
+
+crontask(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./autorun/crontask.sh &> /dev/null)
+  do
+    sleep 1;
+  done
+
+  kill $pid
+  echo ""
+}
+crontask
+
+echo -e "$COLOR         BACKUP IS TURNED ON$ENDCOLOR"
+##################################################################
 banner2 "     D O C K E R  I N S T A L L"
 
-swap(){
+docker(){
   echo ""
   spin &
   pid=$!
@@ -79,13 +98,13 @@ swap(){
   kill $pid
   echo ""
 }
-swap
+docker
 
 echo -e "$COLOR         Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker)$ENDCOLOR"
 ##################################################################
 banner2 "     B A C K U P  S E T U P"
 
-swap(){
+backup(){
   echo ""
   spin &
   pid=$!
@@ -98,9 +117,9 @@ swap(){
   kill $pid
   echo ""
 }
-swap
+backup
 
-echo -e "$COLOR         BACKUP IS TURNED ON$ENDCOLOR"
+echo -e "$COLOR         BACKUP IS STORED IN /backup$ENDCOLOR"
 ##################################################################
 
 #LOG
@@ -110,11 +129,18 @@ cat <<EOF > ./init-log
 |
 |   SERVER INFO:
 |
-|     OS VERSION:      $OSVER
+|     OS VERSION:      Ubuntu $OSVER
 |
 |     USER INFO:
 |
 |        - Username:   $USER
+|
+|     INSTALLED:
+|
+|        - Basic programs
+|        - Crontask
+|        - Docker
+|        - Backup
 |
 |     NETWORK:
 |
