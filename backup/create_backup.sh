@@ -4,9 +4,9 @@ source .var
 
 mkdir /backup
 mkdir /backup/{daily,weekly,monthly}
-mkdir /home/"$USER"/backup-task
+mkdir /home/$USER/backup-task
 
-cat <<EOF >> /home/"$USER"/backup-task/backup-daily.sh
+cat <<EOF >> /home/$USER/backup-task/backup-daily.sh
 #!/bin/bash
 
 tar -zcf /backup/daily/backup-$(date +%Y%m%d).tar.gz -C $SOURCE/*
