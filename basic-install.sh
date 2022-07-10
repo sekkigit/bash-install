@@ -16,7 +16,7 @@ spin(){
   do
     for i in "${spinner[@]}";
     do
-      echo -ne "RUNNING \r$i";
+      echo -ne "\r$i";
       sleep 0.2;
     done;
   done
@@ -64,9 +64,6 @@ basic(){
 basic
 
 echo -e "$COLOR Installed: Cron, Nano, Btop, Updated $ENDCOLOR"
-sleep 3s
-clear
-
 ##################################################################
 banner2 "     C R O N T A S K  S E T U P"
 
@@ -86,9 +83,6 @@ crontask(){
 crontask
 
 echo -e "$COLOR Auto Update and Upgrade turned ON.$ENDCOLOR"
-sleep 4s
-clear
-
 ##################################################################
 banner2 "     B A C K U P  S E T U P"
 
@@ -108,8 +102,6 @@ backup(){
 backup
 
 echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
-sleep 4s
-clear
 ##################################################################
 banner2 "     D O C K E R  I N S T A L L"
 
@@ -128,14 +120,11 @@ docker(){
 }
 docker
 
-echo -e "$COLOR         Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.$ENDCOLOR"
-sleep 4s
-clear
+echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.$ENDCOLOR"
 
 #LOG
 banner2 "     I N F O"
 cat <<EOF > ./init-log
-
 ###############################################################
 |
 |   SERVER INFO:
