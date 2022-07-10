@@ -1,11 +1,9 @@
 #!/bin/bash
 
-source .var
-
 apt install samba -y
 groupadd --system smbgroup
 useradd --system --no-create-home --group smbgroup -s /bin/false smbuser
-chown -R smbuser:smbgroup /media/share
+chown -R smbuser:smbgroup "$SHARE"
 
 cat <<EOF > /etc/samba/smb.conf
 [global]
@@ -19,7 +17,7 @@ EOF
 
 cat <<EOF > /etc/samba/shares.conf
 [Public Files]
-path = /media/share
+path = "$SHARE"
 force user = smbuser
 force group = smbgroup
 create mask = 0664

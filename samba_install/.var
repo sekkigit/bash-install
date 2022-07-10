@@ -1,1 +1,2 @@
 SUBNET="$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk '{print $1}')"
+SHARE="/home/$(who am i | awk '{print $1}')/samba-share"

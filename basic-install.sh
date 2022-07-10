@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #VAR
-USER="$(id -u -n)"
+USER="$(who am i | awk '{print $1}')"
 IP=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 PUBIP=$(curl ifconfig.me)
 SUBNET=$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk '{print $1}')
@@ -16,7 +16,7 @@ spin(){
   do
     for i in "${spinner[@]}";
     do
-      echo -ne "\r$i";
+      echo -ne "RUNNING \r$i";
       sleep 0.2;
     done;
   done
@@ -142,7 +142,7 @@ cat <<EOF > ./init-log
 |
 |     OS VERSION:      Ubuntu $OSVER
 |
-|     USER INFO:       $USER
+|     USER INFO:       $(who am i | awk '{print $1}')
 |
 |     NETWORK:
 |

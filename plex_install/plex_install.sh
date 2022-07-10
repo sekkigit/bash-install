@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .var
+PLEX="/home/$(who am i | awk '{print $1}')/plexserver"
 
 mkdir "$PLEX"
 apt install apt-transport-https curl wget -y
