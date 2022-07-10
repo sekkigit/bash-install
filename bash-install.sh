@@ -82,7 +82,7 @@ crontask(){
 }
 crontask
 
-echo -e "$COLOR         BACKUP IS TURNED ON$ENDCOLOR"
+echo -e "$COLOR         ATOTASK IS TURNED ON$ENDCOLOR"
 ##################################################################
 banner2 "     D O C K E R  I N S T A L L"
 
@@ -138,10 +138,11 @@ cat <<EOF > ./init-log
 |
 |     INSTALLED:
 |
-|        - Basic programs
 |        - Crontask
 |        - Docker
 |        - Backup
+|        - Nano
+|        - Btop
 |
 |     NETWORK:
 |
