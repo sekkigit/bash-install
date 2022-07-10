@@ -1,6 +1,6 @@
 # Bash-install
 
-##This script will install the next software:
+This script will install the next software:
 
 - Nano
 - Crontask
@@ -10,7 +10,7 @@
 - Docker-compose
 - Backup (Daily, Weakly, and Monthly)
 
-##Oder programs that have  installation scripts that you need to start manually are:
+Oder programs that have  installation scripts that you need to start manually are:
 
 - Crowdsec
 - Samba
@@ -18,7 +18,7 @@
 
 
 ```
-sudo apt update
-sudo apt install git -y
+sudo apt update \
+sudo apt install git -y \
 git clone https://github.com/sekkigit/bash-install.git install && cd install
 ```
