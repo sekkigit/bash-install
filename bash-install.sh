@@ -82,7 +82,7 @@ crontask(){
 }
 crontask
 
-echo -e "$COLOR         ATOTASK IS TURNED ON$ENDCOLOR"
+echo -e "$COLOR         AUTOTASK IS TURNED ON$ENDCOLOR"
 ##################################################################
 banner2 "     D O C K E R  I N S T A L L"
 
