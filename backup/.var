@@ -1,2 +1,1 @@
-USER="$(who am i | awk '{print $1}')"
-SOURCE="/home/"$USER""
+SOURCE="/home/"$(who am i | awk '{print $1}')""
