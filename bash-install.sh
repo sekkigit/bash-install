@@ -64,7 +64,7 @@ basic(){
 basic
 
 echo -e "$COLOR Installed: Cron, Nano, Btop, Updated $ENDCOLOR"
-sleep 2s
+sleep 3s
 clear
 
 ##################################################################
@@ -86,7 +86,7 @@ crontask(){
 crontask
 
 echo -e "$COLOR Auto Update and Upgrade turned ON.$ENDCOLOR"
-sleep 2s
+sleep 4s
 clear
 
 ##################################################################
@@ -108,7 +108,7 @@ backup(){
 backup
 
 echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
-sleep 2s
+sleep 4s
 clear
 ##################################################################
 banner2 "     D O C K E R  I N S T A L L"
@@ -129,7 +129,7 @@ docker(){
 docker
 
 echo -e "$COLOR         Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.$ENDCOLOR"
-sleep 2s
+sleep 4s
 clear
 
 #LOG
@@ -142,18 +142,7 @@ cat <<EOF > ./init-log
 |
 |     OS VERSION:      Ubuntu $OSVER
 |
-|     USER INFO:
-|
-|        - Username:   $USER
-|
-|     JOBS:
-|
-|        - Installed: Cron, Nano, Btop, Updated
-|        - Auto Update and Upgrade turned ON.
-|        - Backing up every Day, Week and Month in to the /backup
-|        - Docker is $(systemctl is-enabled docker) and 
-|          $(systemctl is-active docker). Docker system prune automated.
-|
+|     USER INFO:       $USER
 |
 |     NETWORK:
 |
@@ -161,11 +150,19 @@ cat <<EOF > ./init-log
 |        - Subnet:     $SUBNET
 |        - NetAdapter: $NETADAPT
 |
+|     EVENTS:
+|
+|        - Installed: Cron, Nano, Btop, Updated
+|        - Auto Update and Upgrade turned ON.
+|        - Backing up every Day, Week and Month in to the /backup.
+|        - Frst backup created.
+|        - Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
+|        - Docker system prune automated.
+|
+|
 ###############################################################
 |
-|     CONNECT TO:
-|
-|              SSH ==> ssh $USER@$IP
+|     CONNECT:         ssh $USER@$IP
 |
 ###############################################################
 EOF
