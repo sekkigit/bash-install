@@ -36,3 +36,4 @@ cat <<EOF >> /etc/cron.d/crontask
 50 5 1 * * root    /home/$USER/backup-task/backup-monthly.sh
 EOF
 crontab -u "$USER" /etc/cron.d/crontask
+sudo bask /home/"$USER"/backup-task/backup-daily.sh
