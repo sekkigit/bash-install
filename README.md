@@ -20,5 +20,6 @@ Oder programs that have  installation scripts that you need to start manually ar
 ```
 sudo apt update \
 sudo apt install git -y \
-git clone https://github.com/sekkigit/bash-install.git install && cd install
+git clone https://github.com/sekkigit/bash-install.git install && cd install \
+sudo bash init.sh
 ```
