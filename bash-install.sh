@@ -110,7 +110,7 @@ backup(){
   spin &
   pid=$!
 
-  for i in $(bash ./docker_install/create_backup.sh &> /dev/null)
+  for i in $(bash ./backup/create_backup.sh &> /dev/null)
   do
     sleep 1;
   done
