@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source .var
-
 mkdir /backup
 mkdir /backup/{daily,weekly,monthly}
 mkdir /backup-task
@@ -9,7 +7,7 @@ mkdir /backup-task
 cat <<EOF >> /backup-task/backup-daily.sh
 #!/bin/bash
 
-tar -zcf /backup/daily/backup-\$(date +%Y%m%d).tar.gz -C "$SOURCE"/*
+tar -zcf /backup/daily/backup-\$(date +%Y%m%d).tar.gz -C /home/$(who am i | awk '{print $1}')/*
 find /backup/daily/* -mtime +7 -delete -exec rm {} \; 
 EOF
 chmod +x /backup-task/backup-daily.sh
@@ -17,7 +15,7 @@ chmod +x /backup-task/backup-daily.sh
 cat <<EOF >> /backup-task/backup-weekly.sh
 #!/bin/bash
 
-tar -zcf /backup/weekly/backup-\$(date +%Y%m%d).tar.gz -C "$SOURCE"/*
+tar -zcf /backup/weekly/backup-\$(date +%Y%m%d).tar.gz -C /home/$(who am i | awk '{print $1}')/*
 find /backup/weekly/* -mtime +31 -delete -exec rm {} \; 
 EOF
 chmod +x /backup-task/backup-weekly.sh
@@ -25,7 +23,7 @@ chmod +x /backup-task/backup-weekly.sh
 cat <<EOF >> /backup-task/backup-monthly.sh
 #!/bin/bash
 
-tar -zcf /backup/weekly/backup-\$(date +%Y%m%d).tar.gz -C "$SOURCE"/*
+tar -zcf /backup/weekly/backup-\$(date +%Y%m%d).tar.gz -C /home/$(who am i | awk '{print $1}')/*
 find /backup/monthly/* -mtime +365 -delete -exec rm {} \; 
 EOF
 chmod +x /backup-task/backup-monthly.sh
