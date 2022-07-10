@@ -63,7 +63,10 @@ basic(){
 }
 basic
 
-echo -e "$COLOR         INSTALLED BASIC APPS$ENDCOLOR"
+echo -e "$COLOR Installed: Cron, Nano, Btop, Updated $ENDCOLOR"
+sleep 2s
+clear
+
 ##################################################################
 banner2 "     C R O N T A S K  S E T U P"
 
@@ -82,26 +85,10 @@ crontask(){
 }
 crontask
 
-echo -e "$COLOR         AUTOTASK IS TURNED ON$ENDCOLOR"
-##################################################################
-banner2 "     D O C K E R  I N S T A L L"
+echo -e "$COLOR Auto Update and Upgrade turned ON.$ENDCOLOR"
+sleep 2s
+clear
 
-docker(){
-  echo ""
-  spin &
-  pid=$!
-
-  for i in $(bash ./docker_install/docker_install.sh &> /dev/null)
-  do
-    sleep 1;
-  done
-
-  kill $pid
-  echo ""
-}
-docker
-
-echo -e "$COLOR         Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker)$ENDCOLOR"
 ##################################################################
 banner2 "     B A C K U P  S E T U P"
 
@@ -120,10 +107,33 @@ backup(){
 }
 backup
 
-echo -e "$COLOR         BACKUP IS STORED IN /backup$ENDCOLOR"
+echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
+sleep 2s
+clear
 ##################################################################
+banner2 "     D O C K E R  I N S T A L L"
+
+docker(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./docker_install/docker_install.sh &> /dev/null)
+  do
+    sleep 1;
+  done
+
+  kill $pid
+  echo ""
+}
+docker
+
+echo -e "$COLOR         Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.$ENDCOLOR"
+sleep 2s
+clear
 
 #LOG
+banner2 "     I N F O"
 cat <<EOF > ./init-log
 
 ###############################################################
@@ -136,13 +146,14 @@ cat <<EOF > ./init-log
 |
 |        - Username:   $USER
 |
-|     INSTALLED:
+|     JOBS:
 |
-|        - Crontask
-|        - Docker
-|        - Backup
-|        - Nano
-|        - Btop
+|        - Installed: Cron, Nano, Btop, Updated
+|        - Auto Update and Upgrade turned ON.
+|        - Backing up every Day, Week and Month in to the /backup
+|        - Docker is $(systemctl is-enabled docker) and 
+|          $(systemctl is-active docker). Docker system prune automated.
+|
 |
 |     NETWORK:
 |
