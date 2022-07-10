@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source .var
+
 apt install docker.io -y
 apt install docker-compose -y
 groupadd --system dockergroup
