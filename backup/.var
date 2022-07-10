@@ -1,2 +1,1 @@
-USER="$(id -u -n)"
-SOURCE="/home"
+SOURCE="/home/"$USER""
