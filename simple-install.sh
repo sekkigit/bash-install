@@ -12,7 +12,7 @@ COLOR="\e[92m"
 ENDCOLOR="\e[0m"
 
 #Loading
-spinner=(◴◷◶◵);
+spinner=(◴ ◷ ◶ ◵);
 
 spin(){
   while true
