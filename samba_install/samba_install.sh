@@ -1,8 +1,12 @@
 #!/bin/bash
 
+SUBNET="$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk '{print $1}')"
+SHARE="/home/$(who am i | awk '{print $1}')/samba-share"
+
 apt install samba -y
 groupadd --system smbgroup
 useradd --system --no-create-home --group smbgroup -s /bin/false smbuser
+mkdir "$SHARE"
 chown -R smbuser:smbgroup "$SHARE"
 
 cat <<EOF > /etc/samba/smb.conf

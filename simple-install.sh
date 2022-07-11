@@ -124,6 +124,67 @@ docker(){
 docker
 
 echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.$ENDCOLOR"
+##################################################################
+banner2 "     C R O W D S E C  I N S T A L L"
+
+crowdsec(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./crowdsec/crowdsec.sh &> /dev/null)
+  do
+    sleep 1;
+  done
+
+  kill $pid
+  echo ""
+}
+crowdsec
+
+echo -e "$COLOR Crowdsec is $(systemctl is-enabled crowdsec) and $(systemctl is-active crowdsec). Crowdsec update automated.$ENDCOLOR"
+##################################################################
+banner2 "     C O C K P I T  I N S T A L L"
+
+cockpit(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./cockpit/cockpit.sh &> /dev/null)
+  do
+    sleep 1;
+  done
+
+  kill $pid
+  echo ""
+}
+cockpit
+
+echo -e "$COLOR Cockpit is $(systemctl is-enabled cockpit) and $(systemctl is-active cockpit).$ENDCOLOR"
+##################################################################
+banner2 "     S A M B A  S E T U P"
+
+samba(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./samba_install/samba_install.sh &> /dev/null)
+  do
+    sleep 0.1;
+  done
+
+  kill $pid
+  echo ""
+}
+samba
+
+echo
+echo -e "$COLOR Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd)$ENDCOLOR"
+
+sleep 3s
+clear
 
 #LOG
 banner2 "     I N F O"
@@ -151,6 +212,10 @@ cat <<EOF > ./init-log
 |        - Frst backup created.
 |        - Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
 |        - Docker system prune automated.
+|        - Crowdsec is $(systemctl is-enabled crowdsec) and $(systemctl is-active crowdsec).
+|        - Crowdsec update automated.
+|        - Cockpit is $(systemctl is-enabled cockpit) and $(systemctl is-active cockpit).
+|        - Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd).
 |
 |
 ###############################################################
