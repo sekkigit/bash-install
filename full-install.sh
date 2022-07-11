@@ -226,7 +226,7 @@ sleep 3s
 clear
 
 #LOG
-banner1 "     F I N"
+banner "     F I N"
 cat <<EOF > ./init-log
 ###############################################################
 |
