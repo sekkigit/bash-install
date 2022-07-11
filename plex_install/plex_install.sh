@@ -22,6 +22,4 @@ description=The Plex Media Server (with additional DLNA capability)
 ports=32400/tcp|3005/tcp|5353/udp|8324/tcp|32410:32414/udp|1900/udp|32469/tcp
 EOF
 
-ufw app update plexmediaserver
-ufw allow plexmediaserver-all
 systemctl restart plexmediaserver

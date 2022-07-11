@@ -126,7 +126,7 @@ backup
 echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
 
 #LOG
-banner2 "     I N F O"
+banner2 "     F I N"
 cat <<EOF > ./init-log
 ###############################################################
 |

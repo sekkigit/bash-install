@@ -11,4 +11,6 @@ ufw allow 80/tcp   #HTTP
 ufw allow 443/tcp  #HTTPS
 ufw limit from "$SUBNET" to any app Samba #SAMBA
 ufw limit from "$SUBNET" to any port 9090 proto tcp #COCKPIT
+ufw app update plexmediaserver #PLEX
+ufw allow plexmediaserver-all #PLEX
 ufw --force enable

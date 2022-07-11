@@ -144,6 +144,46 @@ cockpit
 
 echo -e "$COLOR Cockpit is $(systemctl is-enabled cockpit) and $(systemctl is-active cockpit).$ENDCOLOR"
 ##################################################################
+banner2 "     S A M B A"
+
+samba(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./samba_install/samba_install.sh &> /dev/null)
+  do
+    sleep 0.1;
+  done
+
+  kill $pid
+  echo ""
+}
+samba
+
+echo
+echo -e "$COLOR Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd)$ENDCOLOR"
+##################################################################
+banner2 "     P L E X  M E D I A  S E R V E R"
+
+plex(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./plex_install/plex_install.sh &> /dev/null)
+  do
+    sleep 0.1;
+  done
+
+  kill $pid
+  echo ""
+}
+plex
+
+echo
+echo -e "$COLOR Plex is $(systemctl is-enabled plexmediaserver) and $(systemctl is-active plexmediaserver)$ENDCOLOR"
+##################################################################
 banner2 "     U F W - F I R E W A L L"
 
 backup(){
@@ -151,7 +191,7 @@ backup(){
   spin &
   pid=$!
 
-  for i in $(bash ./ufw_install/ufw_simple_install.sh &> /dev/null)
+  for i in $(bash ./ufw_install/ufw_full_install.sh &> /dev/null)
   do
     sleep 1;
   done
@@ -212,6 +252,8 @@ cat <<EOF > ./init-log
 |        - Crowdsec is $(systemctl is-enabled crowdsec) and $(systemctl is-active crowdsec).
 |        - Crowdsec update automated.
 |        - Cockpit is $(systemctl is-enabled cockpit) and $(systemctl is-active cockpit).
+|        - Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd).
+|        - Plex is $(systemctl is-enabled plexmediaserver) and $(systemctl is-active plexmediaserver)
 |        - UFW is $(systemctl is-enabled ufw) and $(systemctl is-active ufw).
 |        - Backing up every Day, Week and Month in to the /backup.
 |        - Frst backup created.
