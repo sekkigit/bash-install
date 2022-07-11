@@ -12,7 +12,7 @@ COLOR="\e[92m"
 ENDCOLOR="\e[0m"
 
 #Loading
-spinner=(◢ ◣ ◤ ◥);
+spinner=(◴◷◶◵);
 
 spin(){
   while true
@@ -68,7 +68,7 @@ basic
 
 echo -e "$COLOR Installed: Cron, Nano, Btop, Updated $ENDCOLOR"
 ##################################################################
-banner2 "     C R O N T A S K  S E T U P"
+banner2 "     C R O N T A S K"
 
 crontask(){
   echo ""
@@ -87,26 +87,7 @@ crontask
 
 echo -e "$COLOR Auto Update and Upgrade turned ON.$ENDCOLOR"
 ##################################################################
-banner2 "     B A C K U P  S E T U P"
-
-backup(){
-  echo ""
-  spin &
-  pid=$!
-
-  for i in $(bash ./backup/create_backup.sh &> /dev/null)
-  do
-    sleep 1;
-  done
-
-  kill $pid
-  echo ""
-}
-backup
-
-echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
-##################################################################
-banner2 "     D O C K E R  I N S T A L L"
+banner2 "     D O C K E R"
 
 docker(){
   echo ""
@@ -124,6 +105,25 @@ docker(){
 docker
 
 echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.$ENDCOLOR"
+##################################################################
+banner2 "     B A C K U P"
+
+backup(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./backup/create_backup.sh &> /dev/null)
+  do
+    sleep 1;
+  done
+
+  kill $pid
+  echo ""
+}
+backup
+
+echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
 
 #LOG
 banner2 "     I N F O"
@@ -147,10 +147,10 @@ cat <<EOF > ./init-log
 |
 |        - Installed: Cron, Nano, Btop, Updated
 |        - Auto Update and Upgrade turned ON.
-|        - Backing up every Day, Week and Month in to the /backup.
-|        - Frst backup created.
 |        - Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
 |        - Docker system prune automated.
+|        - Backing up every Day, Week and Month in to the /backup.
+|        - Frst backup created.
 |
 |
 ###############################################################

@@ -33,5 +33,4 @@ writable = yes
 EOF
 
 systemctl start smbd
-ufw allow from "$SUBNET" to any app Samba
 systemctl restart smbd nmbd
