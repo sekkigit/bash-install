@@ -49,7 +49,7 @@ banner "              S T A R T "
 echo
 echo
 ##################################################################
-banner2 "     B A S I C  A P P S"
+banner2 "         B A S I C  A P P S"
 
 basic(){
   echo ""
@@ -68,7 +68,7 @@ basic
 
 echo -e "$COLOR Installed: Cron, Nano, Btop, Updated $ENDCOLOR"
 ##################################################################
-banner2 "     C R O N T A S K"
+banner2 "          C R O N T A S K"
 
 crontask(){
   echo ""
@@ -87,7 +87,7 @@ crontask
 
 echo -e "$COLOR Auto Update and Upgrade turned ON.$ENDCOLOR"
 ##################################################################
-banner2 "     D O C K E R"
+banner2 "            D O C K E R"
 
 docker(){
   echo ""
@@ -107,7 +107,7 @@ docker
 echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
 Docker system prune automated.$ENDCOLOR"
 ##################################################################
-banner2 "     B A C K U P"
+banner2 "           B A C K U P"
 
 backup(){
   echo ""
@@ -127,7 +127,7 @@ backup
 echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
 
 #LOG
-banner "     F I N"
+banner "              F I N"
 cat <<EOF > ./init-log
 |
 |   SERVER INFO:

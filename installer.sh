@@ -7,7 +7,7 @@ Choose the type of installation: '
 foods=("Basic" "Simple" "Full" "Quit")
 
 clear
-
+echo "+------------------------------------------+"
 select fav in "${foods[@]}"; do
     case $fav in
         "Basic")
