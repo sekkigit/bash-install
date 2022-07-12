@@ -5,6 +5,8 @@ ENDCOLOR="\e[0m"
 PS3='Choose the type of installation: '
 foods=("Basic" "Simple" "Full" "Quit")
 
+clear
+
 select fav in "${foods[@]}"; do
     case $fav in
         "Basic")
