@@ -223,7 +223,6 @@ backup
 echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
 
 sleep 3s
-clear
 
 #LOG
 banner "     F I N"
