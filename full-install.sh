@@ -105,7 +105,7 @@ docker(){
 docker
 
 echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
-Docker system prune automated.$ENDCOLOR"
+ Docker system prune automated.$ENDCOLOR"
 ##################################################################
 banner2 "           C R O W D S E C"
 
@@ -125,7 +125,7 @@ crowdsec(){
 crowdsec
 
 echo -e "$COLOR Crowdsec is $(systemctl is-enabled crowdsec) and $(systemctl is-active crowdsec).
-Crowdsec update automated.$ENDCOLOR"
+ Crowdsec update automated.$ENDCOLOR"
 ##################################################################
 banner2 "            C O C K P I T "
 

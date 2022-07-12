@@ -105,7 +105,7 @@ docker(){
 docker
 
 echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
-Docker system prune automated.$ENDCOLOR"
+ Docker system prune automated.$ENDCOLOR"
 ##################################################################
 banner2 "           B A C K U P"
 
