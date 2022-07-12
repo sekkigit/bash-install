@@ -26,7 +26,7 @@ Auto Backup and Update
 -------------------------------------
             "
             sleep 5s
-            
+         clear   
 	     bash basic-install.sh
 	    break
             ;;
@@ -48,7 +48,7 @@ Auto Backup and Update
 -------------------------------------
             "
             sleep 5s
-            
+         clear   
 	     bash simple-install.sh
 	    break
             ;;
@@ -70,7 +70,7 @@ Auto Backup and Update
 -------------------------------------
             "
             sleep 5s
-            
+         clear   
 	     bash full-install.sh
 	    break
             ;;
