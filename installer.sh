@@ -3,11 +3,12 @@
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
 PS3='+------------------------------------------+
-Choose the type of installation: '
+ Choose the type of installation: '
 foods=("Basic" "Simple" "Full" "Quit")
 
 clear
-echo "+------------------------------------------+"
+echo -e "$COLOR Bootstap script for Simple Ubuntu 22.04 LTS $ENDCOLOR
++------------------------------------------+"
 select fav in "${foods[@]}"; do
     case $fav in
         "Basic")
@@ -17,7 +18,10 @@ select fav in "${foods[@]}"; do
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-Nano, Btop, Cron, Docker
+- Nano
+- Btop
+- Cron
+- Docker
 
 $COLOR Setup: $ENDCOLOR
 
@@ -42,8 +46,13 @@ Auto Backup and Update
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-Nano, Btop, Cron, Docker, Crowdsec,
-Cockpit, UFW
+- Nano
+- Btop
+- Cron
+- Docker
+- Crowdsec
+- Cockpit
+- UFW
 
 $COLOR Setup: $ENDCOLOR
 
@@ -68,8 +77,15 @@ Auto Backup and Update
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-Nano, Btop, Cron, Docker, Crowdsec,
-Cockpit, UFW, Samba, Plex
+- Nano
+- Btop
+- Cron
+- Docker
+- Crowdsec
+- Cockpit
+- UFW
+- Samba
+- Plex
 
 $COLOR Setup: $ENDCOLOR
 
