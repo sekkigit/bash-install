@@ -45,11 +45,11 @@ banner2()
 apt remove needrestart -y
 clear
 ##################################################################
-banner "              S T A R T "
+banner "  S T A R T "
 echo
 echo
 ##################################################################
-banner2 "         B A S I C  A P P S"
+banner2 "  B A S I C  A P P S"
 
 basic(){
   echo ""
@@ -68,7 +68,7 @@ basic
 
 echo -e "$COLOR Installed: Cron, Nano, Btop, Updated $ENDCOLOR"
 ##################################################################
-banner2 "          C R O N T A S K"
+banner2 "  C R O N T A S K"
 
 crontask(){
   echo ""
@@ -87,7 +87,7 @@ crontask
 
 echo -e "$COLOR Auto Update and Upgrade turned ON.$ENDCOLOR"
 ##################################################################
-banner2 "             D O C K E R"
+banner2 "  D O C K E R"
 
 docker(){
   echo ""
@@ -107,7 +107,7 @@ docker
 echo -e "$COLOR Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
  Docker system prune automated.$ENDCOLOR"
 ##################################################################
-banner2 "           C R O W D S E C"
+banner2 "  C R O W D S E C"
 
 crowdsec(){
   echo ""
@@ -127,7 +127,7 @@ crowdsec
 echo -e "$COLOR Crowdsec is $(systemctl is-enabled crowdsec) and $(systemctl is-active crowdsec).
  Crowdsec update automated.$ENDCOLOR"
 ##################################################################
-banner2 "            C O C K P I T "
+banner2 "  C O C K P I T "
 
 cockpit(){
   echo ""
@@ -146,7 +146,7 @@ cockpit
 
 echo -e "$COLOR Cockpit is $(systemctl is-enabled cockpit) and $(systemctl is-active cockpit).$ENDCOLOR"
 ##################################################################
-banner2 "              S A M B A"
+banner2 "  S A M B A"
 
 samba(){
   echo ""
@@ -166,7 +166,7 @@ samba
 echo
 echo -e "$COLOR Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd)$ENDCOLOR"
 ##################################################################
-banner2 "      P L E X  M E D I A  S E R V E R"
+banner2 "  P L E X  M E D I A  S E R V E R"
 
 plex(){
   echo ""
@@ -186,7 +186,7 @@ plex
 echo
 echo -e "$COLOR Plex is $(systemctl is-enabled plexmediaserver) and $(systemctl is-active plexmediaserver)$ENDCOLOR"
 ##################################################################
-banner2 "           U F W - F I R E W A L L"
+banner2 "  U F W - F I R E W A L L"
 
 backup(){
   echo ""
@@ -205,7 +205,7 @@ backup
 
 echo -e "$COLOR UFW is $(systemctl is-enabled ufw) and $(systemctl is-active ufw)$ENDCOLOR"
 ##################################################################
-banner2 "               B A C K U P"
+banner2 "  B A C K U P"
 
 backup(){
   echo ""
@@ -227,7 +227,7 @@ echo
 sleep 3s
 
 #LOG
-banner "                   F I N"
+banner "  F I N"
 cat <<EOF > ./init-log
 |
 | SERVER INFO:
@@ -260,7 +260,7 @@ cat <<EOF > ./init-log
 |
 |
 |
-|   CONNECT:         ssh $USER@$IP
+|   CONNECT:  ssh $USER@$IP
 |
 +------------------------------------------+
 EOF
