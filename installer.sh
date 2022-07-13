@@ -20,12 +20,12 @@ $COLOR Installing: $ENDCOLOR
 Nano, Btop, Cron, Docker
 
 $COLOR Setup: $ENDCOLOR
-            
+
 Auto Backup and Update
-            
+
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav installation? Yes/No.  
+        read -p "Do you wish run $fav installation? Yes/No.
 --> " yn
         case $yn in
             [Yy]* ) bash basic-install.sh; break;;
@@ -33,7 +33,7 @@ Auto Backup and Update
             * ) echo "Please answer yes or no.";;
           esac
         done
-	    break
+            break
             ;;
         "Simple")
             echo "+------------------------------------------+"
@@ -46,20 +46,20 @@ Nano, Btop, Cron, Docker, Crowdsec,
 Cockpit, UFW
 
 $COLOR Setup: $ENDCOLOR
-            
+
 Auto Backup and Update
-            
+
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav installation? Yes/No.  
+        read -p "Do you wish run $fav installation? Yes/No.
 --> " yn
         case $yn in
             [Yy]* ) bash simple-install.sh; break;;
             [Nn]* ) exit;;
             * ) echo "Please answer yes or no.";;
           esac
-        done   
-	    break
+        done
+            break
             ;;
         "Full")
             echo "+------------------------------------------+"
@@ -68,16 +68,16 @@ Auto Backup and Update
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-Nano, Btop, Cron, Docker, Crowdsec, 
+Nano, Btop, Cron, Docker, Crowdsec,
 Cockpit, UFW, Samba, Plex
 
 $COLOR Setup: $ENDCOLOR
-            
+
 Auto Backup and Update
-            
+
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav installation? Yes/No.  
+        read -p "Do you wish run $fav installation? Yes/No.
 --> " yn
         case $yn in
             [Yy]* ) bash full-install.sh; break;;
@@ -85,14 +85,14 @@ Auto Backup and Update
             * ) echo "Please answer yes or no.";;
           esac
         done
-	    break
+            break
             ;;
-	"Quit")
-	    echo "+------------------------------------------+
+        "Quit")
+            echo "+------------------------------------------+
 User requested exit
 +------------------------------------------+"
-	    exit
-	    ;;
+            exit
+            ;;
         *) echo -e "+------------------------------------------+
         $COLOR Invalid option $REPLY $ENDCOLOR";;
     esac
