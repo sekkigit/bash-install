@@ -24,12 +24,14 @@ $COLOR Setup: $ENDCOLOR
 Auto Backup and Update
             
 +------------------------------------------+"
-        echo "Do you wish run $fav installation?"
-              select yn in "Yes" "No"; do
-              case $yn in
-              Yes ) bash basic-install.sh;;
-              No ) exit;;
-            esac
+        while true; do
+        read -p "Do you wish run $fav installation? Yes/No.  
+--> " yn
+        case $yn in
+            [Yy]* ) bash basic-install.sh; break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer yes or no.";;
+          esac
         done
 	    break
             ;;
@@ -48,9 +50,15 @@ $COLOR Setup: $ENDCOLOR
 Auto Backup and Update
             
 +------------------------------------------+"
-            sleep 5s
-         clear   
-	     #bash simple-install.sh
+        while true; do
+        read -p "Do you wish run $fav installation? Yes/No.  
+--> " yn
+        case $yn in
+            [Yy]* ) bash simple-install.sh; break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer yes or no.";;
+          esac
+        done   
 	    break
             ;;
         "Full")
@@ -68,9 +76,15 @@ $COLOR Setup: $ENDCOLOR
 Auto Backup and Update
             
 +------------------------------------------+"
-            sleep 5s
-         clear   
-	     #bash full-install.sh
+        while true; do
+        read -p "Do you wish run $fav installation? Yes/No.  
+--> " yn
+        case $yn in
+            [Yy]* ) bash fill-install.sh; break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer yes or no.";;
+          esac
+        done
 	    break
             ;;
 	"Quit")
