@@ -131,31 +131,32 @@ sleep 3s
 banner "              F I N"
 cat <<EOF > ./init-log
 |
-|   SERVER INFO:
+| SERVER INFO:
 |
-|     OS VERSION:      Ubuntu $OSVER
+|   OS VERSION:  Ubuntu $OSVER
 |
-|     USER INFO:       $(who am i | awk '{print $1}')
+|   USER INFO:   $(who am i | awk '{print $1}')
 |
-|     NETWORK:
+|   NETWORK:
 |
-|        - Public IP:  $PUBIP
-|        - Subnet:     $SUBNET
-|        - NetAdapter: $NETADAPT
-|        - GateWay:    $GATE4
+|     - Public IP:  $PUBIP
+|     - Subnet:     $SUBNET
+|     - NetAdapter: $NETADAPT
+|     - GateWay:    $GATE4
 |
-|     EVENTS:
+|   EVENTS:
 |
-|        - Installed: Cron, Nano, Btop, Updated
-|        - Auto Update and Upgrade turned ON.
-|        - Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
-|        - Docker system prune automated.
-|        - Backing up every Day, Week and Month in to the /backup.
-|        - Frst backup created.
+|     - Installed: Cron, Nano, Btop, Updated
+|     - Auto Update and Upgrade turned ON.
+|     - Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker).
+|     - Docker system prune automated.
+|     - Backing up every Day/Week/Month to the /backup.
+|     - Frst backup created.
 |
 |
 |
-|     CONNECT:         ssh $USER@$IP
+|   CONNECT:         ssh $USER@$IP
 |
++------------------------------------------+
 EOF
 cat ./init-log
