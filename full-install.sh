@@ -223,13 +223,12 @@ backup(){
 backup
 
 echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
-
+echo
 sleep 3s
 
 #LOG
 banner "                   F I N"
 cat <<EOF > ./init-log
-###############################################################
 |
 |   SERVER INFO:
 |
@@ -260,10 +259,8 @@ cat <<EOF > ./init-log
 |        - Frst backup created.
 |
 |
-###############################################################
 |
 |     CONNECT:         ssh $USER@$IP
 |
-###############################################################
 EOF
 cat ./init-log
