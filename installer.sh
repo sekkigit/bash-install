@@ -7,7 +7,7 @@ PS3='+------------------------------------------+
 foods=("Basic" "Simple" "Full" "Quit")
 
 clear
-echo -e "$COLOR Bootstap script for Simple Ubuntu 22.04 LTS $ENDCOLOR
+echo -e "$COLOR Bootstrap script for Simple Ubuntu 22.04 LTS $ENDCOLOR
 +------------------------------------------+"
 select fav in "${foods[@]}"; do
     case $fav in
