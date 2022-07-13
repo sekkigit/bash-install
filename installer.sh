@@ -80,7 +80,7 @@ Auto Backup and Update
         read -p "Do you wish run $fav installation? Yes/No.  
 --> " yn
         case $yn in
-            [Yy]* ) bash fill-install.sh; break;;
+            [Yy]* ) bash full-install.sh; break;;
             [Nn]* ) exit;;
             * ) echo "Please answer yes or no.";;
           esac
