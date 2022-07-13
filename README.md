@@ -1,4 +1,4 @@
-# Bash-install
+# Install
 
 This script will install the next software:
 

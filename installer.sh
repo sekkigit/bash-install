@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/#bash
 
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
@@ -24,9 +24,13 @@ $COLOR Setup: $ENDCOLOR
 Auto Backup and Update
             
 +------------------------------------------+"
-            sleep 5s
-         clear   
-	     bash basic-install.sh
+        echo "Do you wish run $fav installation?"
+              select yn in "Yes" "No"; do
+              case $yn in
+              Yes ) bash basic-install.sh;;
+              No ) exit;;
+            esac
+        done
 	    break
             ;;
         "Simple")
@@ -46,7 +50,7 @@ Auto Backup and Update
 +------------------------------------------+"
             sleep 5s
          clear   
-	     bash simple-install.sh
+	     #bash simple-install.sh
 	    break
             ;;
         "Full")
@@ -66,7 +70,7 @@ Auto Backup and Update
 +------------------------------------------+"
             sleep 5s
          clear   
-	     bash full-install.sh
+	     #bash full-install.sh
 	    break
             ;;
 	"Quit")
