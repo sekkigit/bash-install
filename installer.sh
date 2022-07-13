@@ -3,7 +3,7 @@
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
 PS3='+------------------------------------------+
- Choose the type of installation: '
+ Choose the type of install: '
 foods=("Basic" "Simple" "Full" "Quit")
 
 clear
@@ -13,7 +13,7 @@ select fav in "${foods[@]}"; do
     case $fav in
         "Basic")
             echo "+------------------------------------------+"
-            echo -e "$COLOR $fav instalation starting$ENDCOLOR
+            echo -e "$COLOR $fav install starting$ENDCOLOR
 
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
@@ -29,7 +29,7 @@ $COLOR Setup: $ENDCOLOR
 
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav installation? Yes/No.
+        read -p "Do you wish run $fav install? Yes/No.
 --> " yn
         case $yn in
             [Yy]* ) bash basic-install.sh; break;;
@@ -41,7 +41,7 @@ $COLOR Setup: $ENDCOLOR
             ;;
         "Simple")
             echo "+------------------------------------------+"
-            echo -e "$COLOR $fav instalation starting$ENDCOLOR
+            echo -e "$COLOR $fav install starting$ENDCOLOR
 
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
@@ -60,7 +60,7 @@ $COLOR Setup: $ENDCOLOR
 
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav installation? Yes/No.
+        read -p "Do you wish run $fav install? Yes/No.
 --> " yn
         case $yn in
             [Yy]* ) bash simple-install.sh; break;;
@@ -72,7 +72,7 @@ $COLOR Setup: $ENDCOLOR
             ;;
         "Full")
             echo "+------------------------------------------+"
-            echo -e "$COLOR $fav instalation starting$ENDCOLOR
+            echo -e "$COLOR $fav install starting$ENDCOLOR
 
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
@@ -93,7 +93,7 @@ $COLOR Setup: $ENDCOLOR
 
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav installation? Yes/No.
+        read -p "Do you wish run $fav install? Yes/No.
 --> " yn
         case $yn in
             [Yy]* ) bash full-install.sh; break;;
