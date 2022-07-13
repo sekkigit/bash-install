@@ -124,7 +124,7 @@ backup(){
 }
 backup
 
-echo -e "$COLOR Backing up every Day, Week and Month in to the /backup$ENDCOLOR"
+echo -e "$COLOR Backing up every Day/Week/Month to the /backup$ENDCOLOR"
 echo
 sleep 3s
 #LOG

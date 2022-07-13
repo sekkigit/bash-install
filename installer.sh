@@ -1,4 +1,4 @@
-#!/bin/#bash
+#!/bin/bash
 
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
@@ -18,14 +18,14 @@ select fav in "${foods[@]}"; do
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-- Nano
-- Btop
-- Cron
-- Docker
+  - Nano
+  - Btop
+  - Cron
+  - Docker
 
 $COLOR Setup: $ENDCOLOR
 
-Auto Backup and Update
+  - Auto Backup and Update
 
 +------------------------------------------+"
         while true; do
@@ -46,17 +46,17 @@ Auto Backup and Update
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-- Nano
-- Btop
-- Cron
-- Docker
-- Crowdsec
-- Cockpit
-- UFW
+  - Nano
+  - Btop
+  - Cron
+  - Docker
+  - Crowdsec
+  - Cockpit
+  - UFW
 
 $COLOR Setup: $ENDCOLOR
 
-Auto Backup and Update
+  - Auto Backup and Update
 
 +------------------------------------------+"
         while true; do
@@ -77,19 +77,19 @@ Auto Backup and Update
 +------------------------------------------+
 $COLOR Installing: $ENDCOLOR
 
-- Nano
-- Btop
-- Cron
-- Docker
-- Crowdsec
-- Cockpit
-- UFW
-- Samba
-- Plex
+  - Nano
+  - Btop
+  - Cron
+  - Docker
+  - Crowdsec
+  - Cockpit
+  - UFW
+  - Samba
+  - Plex
 
 $COLOR Setup: $ENDCOLOR
 
-Auto Backup and Update
+  - Auto Backup and Update
 
 +------------------------------------------+"
         while true; do

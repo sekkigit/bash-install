@@ -23,7 +23,7 @@ chmod +x /backup-task/backup-weekly.sh
 cat <<EOF >> /backup-task/backup-monthly.sh
 #!/bin/bash
 
-tar -zcf /backup/weekly/backup-\$(date +%Y%m%d).tar.gz /home/$(who am i | awk '{print $1}')/*
+tar -zcf /backup/monthly/backup-\$(date +%Y%m%d).tar.gz /home/$(who am i | awk '{print $1}')/*
 find /backup/monthly/* -mtime +365 -delete -exec rm {} \; 
 EOF
 chmod +x /backup-task/backup-monthly.sh
