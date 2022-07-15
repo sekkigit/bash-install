@@ -4,12 +4,12 @@ COLOR="\e[92m"
 ENDCOLOR="\e[0m"
 PS3='+------------------------------------------+
  Choose the type of install: '
-foods=("Basic" "Simple" "Full" "Quit")
+setup=("Basic" "Simple" "Full" "Quit")
 
 clear
 echo -e "$COLOR Bootstrap script for Simple Ubuntu 22.04 LTS $ENDCOLOR
 +------------------------------------------+"
-select fav in "${foods[@]}"; do
+select fav in "${setup[@]}"; do
     case $fav in
         "Basic")
             echo "+------------------------------------------+"
