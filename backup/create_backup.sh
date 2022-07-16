@@ -1,7 +1,6 @@
 #!/bin/bash
 
-mkdir /backup
-mkdir /backup/{daily,weekly,monthly}
+mkdir -p /backup/{daily,weekly,monthly}
 mkdir /backup-task
 
 cat <<EOF >> /backup-task/backup-daily.sh
