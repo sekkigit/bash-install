@@ -10,10 +10,10 @@ PubkeyAuthentication yes"
 EOF
 )
 
-echo "+------------------------------------------+"
+echo ""
 while true; do
-        read -r -p "Do you wish to edit sshd_config and add your .pub key? Yes/No.
---> " yn
+        read -r -p "Do you wish to edit sshd_config and add your .pub key? 
+Yes | No -->  " yn
 echo "+------------------------------------------+"
         case $yn in
             [Yy]* ) echo "Please enter your .pub key here:";
@@ -22,7 +22,7 @@ echo "$PUB" >> /home/"${SUDO_USER:-$USER}"/.ssh/authorized_keys ;
 echo "$SSHD" >> /etc/ssh/sshd_config
             break;;
             [Nn]* ) echo ""; exit;;
-            * ) echo "Please answer yes or no.";;
+            * ) echo "Please answer Yes or No.";;
           esac
         done
 echo "+------------------------------------------+"
