@@ -232,7 +232,7 @@ sshd(){
   spin &
   pid=$!
 
-  for i in $(bash ./ssh_config/ssh_config.sh)
+  for i in $(bash ./ssh_conf/ssh_config.sh)
   do
     sleep 1;
   done
