@@ -16,9 +16,8 @@ while true; do
 Yes | No -->  " yn
 echo "+------------------------------------------+"
         case $yn in
-            [Yy]* ) echo "Please enter your .pub key here:
-id_rsa.pub --> ";
-read -r PUB;
+            [Yy]* ) echo "Please enter your .pub key here:";
+read -r -p "id_rsa.pub --> " PUB;
 echo "$PUB" >> /home/"${SUDO_USER:-$USER}"/.ssh/authorized_keys ;
 echo "$SSHD" >> /etc/ssh/sshd_config
 echo ""
