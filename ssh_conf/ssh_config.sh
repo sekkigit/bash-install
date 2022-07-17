@@ -20,6 +20,8 @@ echo "+------------------------------------------+"
 read -r PUB;
 echo "$PUB" >> /home/"${SUDO_USER:-$USER}"/.ssh/authorized_keys ;
 echo "$SSHD" >> /etc/ssh/sshd_config
+echo ""
+echo "+------------------------------------------+"
             break;;
             [Nn]* ) echo ""; exit;;
             * ) echo "Please answer Yes or No.";;
