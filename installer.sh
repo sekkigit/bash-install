@@ -12,6 +12,7 @@ echo -e "$COLOR Bootstrap script: Simple Ubuntu 22.04 LTS $ENDCOLOR
 select fav in "${setup[@]}"; do
     case $fav in
         "Basic")
+            clear;
             echo "+------------------------------------------+"
             echo -e "$COLOR $fav install starting$ENDCOLOR
 
@@ -40,6 +41,7 @@ Yes | No --> " yn
             break
             ;;
         "Simple")
+            clear;
             echo "+------------------------------------------+"
             echo -e "$COLOR $fav install starting$ENDCOLOR
 
@@ -71,6 +73,7 @@ Yes | No --> " yn
             break
             ;;
         "Full")
+            clear;
             echo "+------------------------------------------+"
             echo -e "$COLOR $fav install starting$ENDCOLOR
 
@@ -104,6 +107,7 @@ Yes | No --> " yn
             break
             ;;
         "Quit")
+            clear;
             echo "+------------------------------------------+
 User requested exit"
             exit
