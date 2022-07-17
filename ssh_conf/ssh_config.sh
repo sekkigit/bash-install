@@ -15,6 +15,7 @@ while true; do
         read -r -p "Do you wish to edit sshd_config and add your .pub key? 
 Yes | No -->  " yn
 echo "+------------------------------------------+"
+echo ""
         case $yn in
             [Yy]* ) echo "Please enter your .pub key here:";
 read -r -p "id_rsa.pub --> " PUB;
