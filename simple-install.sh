@@ -187,20 +187,7 @@ echo
 ##################################################################
 banner2 "  L O C K  S S H"
 
-sshd(){
-  echo ""
-  spin &
-  pid=$!
-
-  for i in $(bash ./ssh_conf/ssh_config.sh)
-  do
-    sleep 1;
-  done
-
-  kill $pid
-  echo ""
-}
-sshd
+bash ./ssh_conf/ssh_config.sh
 
 echo -e "$COLOR SSH configuration is done.$ENDCOLOR"
 echo
@@ -235,6 +222,7 @@ cat <<EOF > ./init-log
 |     - UFW is $(systemctl is-enabled ufw) and $(systemctl is-active ufw).
 |     - Backing up every Day/Week/Month to the /backup.
 |     - Frst backup created.
+|     - SSH confugured.
 |
 |
 |
