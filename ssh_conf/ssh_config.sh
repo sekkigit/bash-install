@@ -6,7 +6,7 @@ PermitRootLogin no
 PasswordAuthentication no
 PermitEmptyPasswords no
 UsePAM yes
-PubkeyAuthentication yes" 
+PubkeyAuthentication yes 
 EOF
 )
 
@@ -25,6 +25,3 @@ echo "$SSHD" >> /etc/ssh/sshd_config
             * ) echo "Please answer Yes or No.";;
           esac
         done
-echo "+------------------------------------------+"
-echo "|            S S H   L O C K E D           |"
-echo "+------------------------------------------+"
