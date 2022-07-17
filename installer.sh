@@ -35,7 +35,7 @@ Yes | No --> " yn
         case $yn in
             [Yy]* ) bash basic-install.sh; break;;
             [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
+            * ) echo -e "$COLOR Please answer yes or no.$ENDCOLOR";;
           esac
         done
             break
@@ -67,7 +67,7 @@ Yes | No --> " yn
         case $yn in
             [Yy]* ) bash simple-install.sh; break;;
             [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
+            * ) echo -e "$COLOR Please answer yes or no.$ENDCOLOR";;
           esac
         done
             break
@@ -101,15 +101,14 @@ Yes | No --> " yn
         case $yn in
             [Yy]* ) bash full-install.sh; break;;
             [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
+            * ) echo -e "$COLOR Please answer yes or no.$ENDCOLOR";;
           esac
         done
             break
             ;;
         "Quit")
             clear;
-            echo "+------------------------------------------+
-User requested exit"
+            echo -e "$COLOR User requested exit$ENDCOLOR"
             exit
             ;;
         *) echo -e "+------------------------------------------+
