@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #VAR
-USER="$(who am i | awk '{print $1}')"
+USER="$(whoami | awk '{print $1}')"
 IP=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 PUBIP=$(curl ifconfig.me)
 SUBNET=$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk '{print $1}')
@@ -184,6 +184,26 @@ backup
 
 echo -e "$COLOR Backing up every Day/Week/Month to the /backup$ENDCOLOR"
 echo
+##################################################################
+banner2 "  L O C K  S S H"
+
+sshd(){
+  echo ""
+  spin &
+  pid=$!
+
+  for i in $(bash ./ssh_config/ssh_config.sh)
+  do
+    sleep 1;
+  done
+
+  kill $pid
+  echo ""
+}
+sshd
+
+echo -e "$COLOR SSH configuration is done.$ENDCOLOR"
+echo
 sleep 3s
 
 #LOG
@@ -194,7 +214,7 @@ cat <<EOF > ./init-log
 |
 |   OS VERSION:  Ubuntu $OSVER
 |
-|   USER INFO:   $(who am i | awk '{print $1}')
+|   USER INFO:   $USER
 |
 |   NETWORK:
 |

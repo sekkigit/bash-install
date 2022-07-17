@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SUBNET="$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk '{print $1}')"
-SHARE="/home/$(who am i | awk '{print $1}')/samba-share"
+SHARE="/home/${SUDO_USER:-$USER}/samba-share"
 
 apt install samba -y
 groupadd --system smbgroup

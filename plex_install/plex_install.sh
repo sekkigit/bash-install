@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLEX="/home/$(who am i | awk '{print $1}')/plexserver"
+PLEX="/home/${SUDO_USER:-$USER}/plexserver"
 
 mkdir "$PLEX"
 apt install apt-transport-https curl wget -y

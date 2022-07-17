@@ -1,39 +1,28 @@
 #!/bin/bash
 
-PS3='Please enter your name from the list: '
-options=("Elvis" "John" "Mark" "Manual input" "Quit")
-select name in "${options[@]}"; do
-    case $REPLY in
-        1|2|3|4)
-            break       # user picked name from list
-            ;;
-        5)
-            echo 'Bye!' >&2
-            exit
-            ;;
-   esac
+echo "+------------------------------------------+"
+while true; do
+        read -p "Do you wish to edit sshd_config and add your .pub key? Yes/No.
+--> " yn
+echo "+------------------------------------------+"
+        case $yn in
+            [Yy]* ) echo "Please enter your ssh .pub key here:";
+read PUB;
+echo "$PUB" >> /home/"${SUDO_USER:-$USER}"/.ssh/authorized_keys
+#cat <<EOF >> /etc/ssh/sshd_config
+#MaxAuthTries 3
+#PermitRootLogin no
+#PasswordAuthentication no
+#PermitEmptyPasswords no
+#UsePAM yes
+#PubkeyAuthentication yes
+#EOF; 
+                    break;;
+            [Nn]* ) echo ""; exit;;
+            * ) echo "Please answer yes or no.";;
+          esac
+        done
+echo "+------------------------------------------+"
+echo "|            S S H   L O C K E D           |"
+echo "+------------------------------------------+"
 
-   echo 'Try again!' >&2
-
-done
-printf 'Hello %s, now select your family name\n' "$name" >&2
-
-PS3='Please enter your family name from the list: '
-options=("Smith" "Brown" "Miller" "Manual input" "Quit")
-select family in "${options[@]}"; do
-    case $REPLY in
-        1|2|3|4)
-            break       # user picked name from list
-            ;;
-        5)
-            echo 'Bye!' >&2
-            exit
-            ;;
-    esac
-
-    echo 'Try again!' >&2
-
-done
-
-echo "$name"
-echo "$family"
