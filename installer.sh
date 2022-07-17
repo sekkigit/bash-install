@@ -7,7 +7,7 @@ PS3='+------------------------------------------+
 setup=("Basic" "Simple" "Full" "Quit")
 
 clear
-echo -e "$COLOR Bootstrap script for Simple Ubuntu 22.04 LTS $ENDCOLOR
+echo -e "$COLOR Bootstrap script: Simple Ubuntu 22.04 LTS $ENDCOLOR
 +------------------------------------------+"
 select fav in "${setup[@]}"; do
     case $fav in
@@ -29,8 +29,8 @@ $COLOR Setup: $ENDCOLOR
 
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav install? Yes/No.
---> " yn
+        read -p "Do you wish run $fav install? 
+Yes | No --> " yn
         case $yn in
             [Yy]* ) bash basic-install.sh; break;;
             [Nn]* ) exit;;
@@ -60,8 +60,8 @@ $COLOR Setup: $ENDCOLOR
 
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav install? Yes/No.
---> " yn
+        read -p "Do you wish run $fav install?
+Yes | No --> " yn
         case $yn in
             [Yy]* ) bash simple-install.sh; break;;
             [Nn]* ) exit;;
@@ -93,8 +93,8 @@ $COLOR Setup: $ENDCOLOR
 
 +------------------------------------------+"
         while true; do
-        read -p "Do you wish run $fav install? Yes/No.
---> " yn
+        read -p "Do you wish run $fav install?
+Yes | No --> " yn
         case $yn in
             [Yy]* ) bash full-install.sh; break;;
             [Nn]* ) exit;;
