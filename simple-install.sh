@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #VAR
-USER="$(whoami | awk '{print $1}')"
+USER="${SUDO_USER:-$USER}"
 IP=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 PUBIP=$(curl ifconfig.me)
 SUBNET=$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk '{print $1}')
