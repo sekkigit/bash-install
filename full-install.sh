@@ -30,16 +30,16 @@ spin(){
 banner()
 {
   echo "$SPLIT"
-  printf "| %-40s |\n" "$(date)"                     
-  echo "|                                          |"
-  printf "|$(tput bold) %-40s $(tput sgr0)|\n" "$@"
+  printf " %-40s \n" "$(date)"                     
+  echo "                                          "
+  printf "$(tput bold) %-40s $(tput sgr0) \n" "$@"
   echo "$SPLIT"
 }
 
 banner2()
 {
   echo "$SPLIT"
-  printf "|$(tput bold) %-40s $(tput sgr0)|\n" "$@"
+  printf "$(tput bold) %-40s $(tput sgr0) \n" "$@"
   echo "$SPLIT"
 }
 
