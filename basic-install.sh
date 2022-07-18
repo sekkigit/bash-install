@@ -32,14 +32,14 @@ banner()
   echo "$SPLIT"
   printf " %-40s \n" "$(date)" | sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"                     
   echo ""
-  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@" | sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"
+  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@"
   echo "$SPLIT"
 }
 
 banner2()
 {
   echo "$SPLIT"
-  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@" | sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"
+  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@"
   echo "$SPLIT"
 }
 
