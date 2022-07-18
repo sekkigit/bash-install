@@ -2,7 +2,7 @@
 
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
-SPLIT="$COLOR $(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -) $ENDCOLOR"
+SPLIT="$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)"
 PS3="$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)
 Choose the type of install: "
 setup=("Basic" "Simple" "Full" "Quit")
