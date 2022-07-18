@@ -2,21 +2,23 @@
 
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
-PS3='+------------------------------------------+
- Choose the type of install: '
+SPLIT="$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)"
+PS3="$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)
+Choose the type of install: "
 setup=("Basic" "Simple" "Full" "Quit")
 
+mainmenu() {
 clear
 echo -e "$COLOR Bootstrap script: Simple Ubuntu 22.04 LTS $ENDCOLOR
-+------------------------------------------+"
+$SPLIT"
 select fav in "${setup[@]}"; do
     case $fav in
         "Basic")
             clear;
-            echo "+------------------------------------------+"
+            echo "$SPLIT"
             echo -e "$COLOR $fav install starting$ENDCOLOR
 
-+------------------------------------------+
+$SPLIT
 $COLOR Installing: $ENDCOLOR
 
   - Nano
@@ -28,13 +30,13 @@ $COLOR Setup: $ENDCOLOR
 
   - Auto Backup and Update
 
-+------------------------------------------+"
+$SPLIT"
         while true; do
         read -p "Do you wish run $fav install? 
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash basic-install.sh; break;;
-            [Nn]* ) exit;;
+            [Nn]* ) mainmenu;;
             * ) echo -e "$COLOR Please answer yes or no.$ENDCOLOR";;
           esac
         done
@@ -42,10 +44,10 @@ Yes | No --> " yn
             ;;
         "Simple")
             clear;
-            echo "+------------------------------------------+"
+            echo "$SPLIT"
             echo -e "$COLOR $fav install starting$ENDCOLOR
 
-+------------------------------------------+
+$SPLIT
 $COLOR Installing: $ENDCOLOR
 
   - Nano
@@ -60,13 +62,13 @@ $COLOR Setup: $ENDCOLOR
 
   - Auto Backup and Update
 
-+------------------------------------------+"
+$SPLIT"
         while true; do
         read -p "Do you wish run $fav install?
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash simple-install.sh; break;;
-            [Nn]* ) exit;;
+            [Nn]* ) mainmenu;;
             * ) echo -e "$COLOR Please answer yes or no.$ENDCOLOR";;
           esac
         done
@@ -74,10 +76,10 @@ Yes | No --> " yn
             ;;
         "Full")
             clear;
-            echo "+------------------------------------------+"
+            echo "$SPLIT"
             echo -e "$COLOR $fav install starting$ENDCOLOR
 
-+------------------------------------------+
+$SPLIT
 $COLOR Installing: $ENDCOLOR
 
   - Nano
@@ -94,13 +96,13 @@ $COLOR Setup: $ENDCOLOR
 
   - Auto Backup and Update
 
-+------------------------------------------+"
+$SPLIT"
         while true; do
         read -p "Do you wish run $fav install?
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash full-install.sh; break;;
-            [Nn]* ) exit;;
+            [Nn]* ) mainmenu;;
             * ) echo -e "$COLOR Please answer yes or no.$ENDCOLOR";;
           esac
         done
@@ -108,10 +110,23 @@ Yes | No --> " yn
             ;;
         "Quit")
             clear;
-            echo -e "$COLOR User requested exit$ENDCOLOR"
+            echo ""
+            echo "$SPLIT"
+            echo ""
+            echo -e "$COLOR Exiting installation$ENDCOLOR"
+            echo ""
+            echo "$SPLIT"
+            echo ""
             exit
             ;;
-        *) echo -e "+------------------------------------------+
-        $COLOR Invalid option $REPLY $ENDCOLOR";;
+        *) 
+           echo "$SPLIT"
+           echo ""
+           echo -e "$COLOR Invalid option $REPLY $ENDCOLOR"
+           echo "";;
     esac
 done
+
+}
+
+mainmenu

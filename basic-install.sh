@@ -8,6 +8,7 @@ SUBNET=$(ip -o -f inet addr show | awk '/scope global/ {printf "%s ", $4}' | awk
 NETADAPT=$(ip route | grep default | sed -e "s/^.*dev.//" -e "s/.proto.*//")
 OSVER=$(cat /etc/*release | awk '/DISTRIB_DESCRIPTION=/ {print $2}')
 GATE4=$(ip route | awk '/default/ {print $3; exit}')
+SPLIT="$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)"
 COLOR="\e[92m"
 ENDCOLOR="\e[0m"
 
@@ -28,18 +29,18 @@ spin(){
 #Baner
 banner()
 {
-  echo "+------------------------------------------+"
+  echo "$SPLIT"
   printf "| %-40s |\n" "$(date)"                     
   echo "|                                          |"
   printf "|$(tput bold) %-40s $(tput sgr0)|\n" "$@"
-  echo "+------------------------------------------+"
+  echo "$SPLIT"
 }
 
 banner2()
 {
-  echo "+------------------------------------------+"
+  echo "$SPLIT"
   printf "|$(tput bold) %-40s $(tput sgr0)|\n" "$@"
-  echo "+------------------------------------------+"
+  echo "$SPLIT"
 }
 
 apt remove needrestart -y
@@ -166,6 +167,6 @@ cat <<EOF > ./init-log
 |
 |   CONNECT:  ssh $USER@$IP
 |
-+------------------------------------------+
+$SPLIT
 EOF
 cat ./init-log
