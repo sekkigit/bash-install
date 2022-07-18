@@ -30,16 +30,16 @@ spin(){
 banner()
 {
   echo "$SPLIT"
-  printf " %-40s \n" "$(date)"                     
-  echo "                                          "
-  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@"
+  printf " %-40s \n" "$(date)" | sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"                     
+  echo ""
+  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@" | sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"
   echo "$SPLIT"
 }
 
 banner2()
 {
   echo "$SPLIT"
-  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@"
+  printf " $(tput bold) %-40s $(tput sgr0) \n" "$@" | sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"
   echo "$SPLIT"
 }
 
