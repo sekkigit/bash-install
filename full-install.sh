@@ -165,7 +165,7 @@ samba(){
 samba
 
 echo
-echo -e "$COLOR Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd)$ENDCOLOR"
+echo -e "$COLOR Samba is $(systemctl is-enabled smbd) and $(systemctl is-active smbd).$ENDCOLOR"
 ##################################################################
 banner2 "    P L E X  M E D I A  S E R V E R"
 
@@ -185,7 +185,7 @@ plex(){
 plex
 
 echo
-echo -e "$COLOR Plex is $(systemctl is-enabled plexmediaserver) and $(systemctl is-active plexmediaserver)$ENDCOLOR"
+echo -e "$COLOR Plex is $(systemctl is-enabled plexmediaserver) and $(systemctl is-active plexmediaserver).$ENDCOLOR"
 ##################################################################
 banner2 "    U F W - F I R E W A L L"
 
@@ -204,7 +204,7 @@ backup(){
 }
 backup
 
-echo -e "$COLOR UFW is $(systemctl is-enabled ufw) and $(systemctl is-active ufw)$ENDCOLOR"
+echo -e "$COLOR UFW is $(systemctl is-enabled ufw) and $(systemctl is-active ufw).$ENDCOLOR"
 ##################################################################
 banner2 "    B A C K U P"
 
