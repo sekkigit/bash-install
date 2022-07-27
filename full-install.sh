@@ -226,6 +226,15 @@ backup
 echo -e "$COLOR Backing up every Day/Week/Month to the /backup$ENDCOLOR"
 echo
 ##################################################################
+banner2 "    O P E N V P N"
+
+  echo ""
+  bash ./openvpn/openvpn.sh
+  echo ""
+
+echo -e "$COLOR OpenVPN is $(systemctl is-enabled openvpn@$COMPANY-vpn) and $(systemctl is-active openvpn@$COMPANY-vpn). $ENDCOLOR"
+echo
+##################################################################
 banner2 "    L O C K  S S H"
 
 bash ./ssh_conf/ssh_config.sh

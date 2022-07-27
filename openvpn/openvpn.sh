@@ -311,10 +311,6 @@ iptables-save
 systemctl start openvpn@"$COMPANY"-vpn
 systemctl enable openvpn@"$COMPANY"-vpn
 
-sleep 2s
-
 # Create user
 /root/create_vpn_user "$ADMINUSER"
 
-echo -e "\e[92m OpenVPN is $(systemctl is-enabled openvpn@$COMPANY-vpn) and $(systemctl is-active openvpn@$COMPANY-vpn). \e[0m"
-sleep 3s
