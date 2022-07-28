@@ -42,7 +42,7 @@ FULL Install
 
 # Script can install: 
 
-   - OpenVPN --------------> create a vpn server with user and SSL certificate
+   - OpenVPN --------------> create a vpn server with vpn-user
    - Samba ----------------> enables Linux / Unix machines to communicate with Windows machines in a network.
    - Cockpit --------------> graphical interface to administer servers
    - CrowdSec -------------> analyze behaviors, respond to attacks & share signals across the community
