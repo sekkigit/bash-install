@@ -84,6 +84,7 @@ sudo bash installer.sh
 #### More advanced bash script
 
 <a href="https://github.com/sekkigit/SekiTEH-bash">SekiTEH-bash</a>
+
 <hr>
 
 
