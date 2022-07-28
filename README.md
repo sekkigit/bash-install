@@ -1,4 +1,6 @@
-# Install
+# Bash Installer
+### For Ubuntu 22.04 LTS (minimized install) and Ubuntu 20.04
+
 
 <p align="center">
   <img width="500" height="500" src="https://github.com/sekkigit/porfolio.sekiteh/blob/gh-pages/img/works/4.jpg?raw=true">
@@ -10,35 +12,6 @@ sudo apt install git -y
 git clone https://github.com/sekkigit/bash-install.git install && cd install
 sudo bash installer.sh
 ```
-
-# There are tree bootstrap scripts to choose from
-------------------------
-SIMPLE Install
-  - Nano
-  - Btop
-  - Cron
-  - Docker
-------------------------
-BASIC Install
-  - Nano
-  - Btop
-  - Cron
-  - Docker
-  - Crowdsec
-  - Cockpit
-  - UFW
-------------------------
-FULL Install
-  - Nano
-  - Btop
-  - Cron
-  - Docker
-  - Crowdsec
-  - Cockpit
-  - UFW
-  - Samba
-  - Plex
-  - OpenVPN
 
 # Script can install: 
 
@@ -56,8 +29,60 @@ FULL Install
 | Basic apps | Install Nano, Btop, Cron. |
 | UFW | Enable and edit rules in UFW firewall. |
 
+
+#### Bootstrap scripts to choose from
+
+
+<details><summary>SIMPLE Install</summary>
+<p>
+
+#### Create envirement for docker containers.
+  - Nano
+  - Btop
+  - Cron
+  - Docker1
+
+</p>
+</details>
+
+
+<details><summary>BASIC Install</summary>
+<p>
+
+#### Create envirement for docker containers with basic protection and monitoring.
+  - Nano
+  - Btop
+  - Cron
+  - Docker
+  - Crowdsec
+  - Cockpit
+  - UFW
+
+</p>
+</details>
+
+
+<details><summary>FULL Install</summary>
+<p>
+
+#### Create envirement for docker containers with file sharing, media sharing, basic protection and monitoring.
+  - Nano
+  - Btop
+  - Cron
+  - Docker
+  - Crowdsec
+  - Cockpit
+  - UFW
+  - Samba
+  - Plex
+
+</p>
+</details>
+
+<hr>
 #### More advanced bash script
 <a href="https://github.com/sekkigit/SekiTEH-bash">SekiTEH-bash</a>
+<hr>
 
 
 
