@@ -42,17 +42,19 @@ FULL Install
 
 # Script can install: 
 
-   - OpenVPN --------------> create a vpn server with vpn-user
-   - Samba ----------------> enables Linux / Unix machines to communicate with Windows machines in a network.
-   - Cockpit --------------> graphical interface to administer servers
-   - CrowdSec -------------> analyze behaviors, respond to attacks & share signals across the community
-   - Docker-compose -------> tool that help define and share multi-container applications
-   - Docker ---------------> enables you to separate your applications from your infrastructure
-   - Plex -----------------> find and access all the media 
-   - Automate backup ------> back up your files every day/weak/month automatically
-   - Lock SSH -------------> Lock SSH session, accept only your KEY, forbid access from root...
-   - Basic apps -----------> Nano, Btop, Cron
-   - UFW rules ------------> enable and edit rules un UFW firewall
+| Program | Description |
+| --- | --- |
+| OpenVPN | Create a vpn server with vpn-user. |
+| Samba | Enables Linux / Unix machines to communicate with Windows machines in a network. |
+| Cockpit | Graphical interface to administer servers. |
+| CrowdSec | Analyze behaviors, respond to attacks & share signals across the community. |
+| Docker-compose | Tool that help define and share multi-container applications. |
+| Docker | Enables you to separate your applications from your infrastructure. |
+| Plex | Access all media. |
+| Automate backup | Back up your files every day/weak/month automatically. |
+| Lock SSH | Lock SSH session, accept only your KEY, forbid access from root. |
+| Basic apps | Install Nano, Btop, Cron. |
+| UFW | Enable and edit rules in UFW firewall. |
 
 #### More advanced bash script
 <a href="https://github.com/sekkigit/SekiTEH-bash">SekiTEH-bash</a>
