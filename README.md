@@ -40,7 +40,7 @@ sudo bash installer.sh
   - Nano
   - Btop
   - Cron
-  - Docker1
+  - Docker
 
 </p>
 </details>
