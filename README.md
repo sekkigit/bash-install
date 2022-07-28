@@ -75,6 +75,7 @@ sudo bash installer.sh
   - UFW
   - Samba
   - Plex
+  - OpenVPN
 
 </p>
 </details>
