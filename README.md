@@ -54,7 +54,9 @@ FULL Install
    - Basic apps -----------> Nano, Btop, Cron
    - UFW rules ------------> enable and edit rules un UFW firewall
 
-More advanced bash script [SekiTEH-bash] (https://github.com/sekkigit/SekiTEH-bash).
+
+<a href="https://github.com/sekkigit/SekiTEH-bash">More advanced bash script [SekiTEH-bash]</a>
+
 
 # Warning
 
