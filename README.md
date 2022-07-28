@@ -58,6 +58,15 @@ FULL Install
 <a href="https://github.com/sekkigit/SekiTEH-bash">SekiTEH-bash</a>
 
 
-# Warning
 
-⚠️ Please beware that products can change over time. I do my best to keep up with the latest changes and releases, but please understand that this won’t always be the case.
+<details><summary>Warning</summary>
+<p>
+
+#### ⚠️ Please beware that products can change over time.
+
+```ruby
+   puts "I do my best to keep up with the latest changes and releases, but please understand that this won’t always be the case."
+```
+
+</p>
+</details>
