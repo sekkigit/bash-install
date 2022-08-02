@@ -12,7 +12,7 @@ Run as normal user but apply "sudo" on a bash script.
 </p>
 
 ```
-git clone https://github.com/sekkigit/custom_homelab.git install && cd install/openvpn
+git clone https://github.com/sekkigit/bash-install.git install && cd install/openvpn
 sudo bash openvpn.sh
 ```
 
